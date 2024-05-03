@@ -16,7 +16,7 @@ class DashboardController extends Controller
         ->count();
         $myPendingTasks = Task::query()
         ->where('status', 'pending')
-        ->where('assigned__user_id', $user->id)
+        ->where('assigned_user_id', $user->id)
         ->count();
 
         $totalProgressTasks = Task::query()
@@ -24,7 +24,7 @@ class DashboardController extends Controller
         ->count();
         $myProgressTasks = Task::query()
         ->where('status', 'in_progress')
-        ->where('assigned__user_id', $user->id)
+        ->where('assigned_user_id', $user->id)
         ->count();
 
 
@@ -33,7 +33,7 @@ class DashboardController extends Controller
         ->count();
         $myCompletedTasks = Task::query()
         ->where('status', 'completed')
-        ->where('assigned__user_id', $user->id)
+        ->where('assigned_user_id', $user->id)
         ->count();
 
         $activeTasks = Task::query()
